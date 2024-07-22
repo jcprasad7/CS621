@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #343a40;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #07dbf2;  /* Background color for signup page */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;  /* Optional: to make the edges rounded */
+}
+
+h1 {
+    color: #636466;
+    text-align: left;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.signin-heading {
+    color: #636466;  /* Lighter color */
+    font-size: 24px;  /* Smaller font size */
+    text-align: left;  /* Left-aligned */
+    margin-bottom: 40px;  /* Margin for spacing */
+}
+
+form {
+    margin-bottom: 40px; /* Spacing between form and "Not a member yet?" prompt */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button, .signup-button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;  /* Light green color for sign-up button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+button:hover, .signup-button:hover {
+    background: #218838;  /* Darker green on hover */
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.signup-prompt, .signin-prompt {
+    margin-top: 20px; 
+	
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #343a40;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+
+
+.login-container {
+    text-align: center;
+    color: white;
+    background: url('/static/login.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 50px;
+    border-radius: 8px;
+    min-height: 100vh; /* Ensure full height */
+}
