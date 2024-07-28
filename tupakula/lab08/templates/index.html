@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <form action="{{ url_for('add_task') }}" method="post">
+            <input type="text" name="description" placeholder="Add a new task">
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <form action="{{ url_for('edit_task', task_id=task.id) }}" method="post" class="edit-form">
+                    <input type="text" name="description" value="{{ task.description }}" {% if not task.editing %}readonly{% endif %}>
+                    {% if task.editing %}
+                    <button type="submit">Save</button>
+                    {% else %}
+                    <button type="button" class="edit-button" data-task-id="{{ task.id }}">Edit</button>
+                    {% endif %}
+                </form>
+                <a href="{{ url_for('delete_task', task_id=task.id) }}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const editButtons = document.querySelectorAll('.edit-button');
+            editButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const taskId = this.getAttribute('data-task-id');
+                    const form = this.closest('form');
+                    const input = form.querySelector('input[type="text"]');
+                    input.removeAttribute('readonly');
+                    this.style.display = 'none';
+                    const saveButton = document.createElement('button');
+                    saveButton.textContent = 'Save';
+                    form.appendChild(saveButton);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
